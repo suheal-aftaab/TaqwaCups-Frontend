@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor's Panel - Taqwa Cups</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans p-10">
+
+    <div class="container mx-auto">
+        <h1 class="text-3xl font-bold text-center mb-6">📋 All Booked Appointments</h1>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-gray-700 text-gray-300 border border-gray-600 rounded-lg">
+                <thead>
+                    <tr class="bg-orange-600 text-white">
+                        <th class="p-3">Name</th>
+                        <th class="p-3">Phone</th>
+                        <th class="p-3">Date</th>
+                        <th class="p-3">Time</th>
+                        <th class="p-3">Gender</th>
+                        <th class="p-3">Address</th>
+                    </tr>
+                </thead>
+                <tbody id="adminAppointmentsTable">
+                    <!-- Data will be added here dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/adminPanel.js"></script>
+</body>
+</html>

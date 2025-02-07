@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Taqwa Cups</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans flex items-center justify-center h-screen">
+
+    <div class="bg-gray-800 p-8 rounded-lg shadow-lg w-96">
+        <h2 class="text-2xl font-bold text-center mb-4">Admin Login</h2>
+        
+        <input type="text" id="username" placeholder="Username" class="w-full p-2 mb-3 rounded bg-gray-700 text-white">
+        <input type="password" id="password" placeholder="Password" class="w-full p-2 mb-3 rounded bg-gray-700 text-white">
+        
+        <button onclick="login()" class="w-full bg-orange-600 p-2 rounded hover:bg-orange-500">Login</button>
+        
+        <p id="errorMessage" class="text-red-500 text-center mt-2"></p>
+    </div>
+
+    <script src="js/adminLogin.js"></script>
+</body>
+</html>
