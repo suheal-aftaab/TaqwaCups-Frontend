@@ -12,10 +12,13 @@ document.addEventListener("DOMContentLoaded", function () {
         };
 
         try {
-            const response = await fetch("http://localhost:5000/api/appointments", {
+            const backendURL = "https://taqwa-cups-backend.onrender.com";
+
+            // 🔹 Call the API directly, without a separate function
+            const response = await fetch(`${backendURL}/api/appointments`, { 
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(appointmentData),
+                body: JSON.stringify(appointmentData)
             });
 
             if (response.ok) {

@@ -1,8 +1,19 @@
 async function fetchAdminAppointments() {
     try {
-        const response = await fetch("http://localhost:5000/api/appointments"); // Fetch from backend
-        const appointments = await response.json();
+        const backendURL = "https://taqwa-cups-backend.onrender.com";
+
+        // 🔹 Fetch data from the backend
+        const response = await fetch(`${backendURL}/api/appointments`);
+        const appointments = await response.json(); // Convert response to JSON
+
+        // 🔹 Get the table element (Ensure this ID exists in your HTML)
         const tableBody = document.getElementById("adminAppointmentsTable");
+
+        if (!appointments || appointments.length === 0) {
+            console.log("No appointments found.");
+            return;
+        }
+
         tableBody.innerHTML = ""; // Clear previous data
 
         appointments.forEach(appointment => {
@@ -19,10 +30,11 @@ async function fetchAdminAppointments() {
             `;
             tableBody.appendChild(row);
         });
+
     } catch (error) {
-        console.error("Failed to fetch appointments", error);
+        console.error("❌ Failed to fetch appointments:", error);
     }
 }
 
-// Run function when page loads
+// 🔹 Run function when page loads
 fetchAdminAppointments();

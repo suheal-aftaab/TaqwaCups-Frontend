@@ -2,11 +2,16 @@ async function login() {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    const response = await fetch("http://localhost:5000/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password }),
-    });
+    const backendURL = "https://taqwa-cups-backend.onrender.com";
+
+    async function bookAppointment() {
+        const response = await fetch(`${backendURL}/api/appointments`, { 
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(appointmentData)
+        });
+    }
+    
 
     const data = await response.json();
     
